@@ -29,7 +29,6 @@ This project implements and compares three neural network architectures for hand
 
 - **Optimizer**: Adam
 - **Loss**: CrossEntropyLoss
-- **Device**: Apple MPS (Metal Performance Shaders)
 
 ## Hyperparameter Tuning
 
@@ -150,32 +149,3 @@ Sample misclassifications from each model's best configuration, showing predicte
 5. **The CNN needed the fewest epochs (10)** to reach its best accuracy, while the Transformer needed the most (20). This is consistent with Transformers requiring more training iterations due to lacking built-in spatial priors.
 
 6. **The Ensemble (majority vote) scored 98.70%**, better than MLP and Transformer individually, but below CNN alone. This is because the CNN's strong performance means the other two models occasionally outvote it incorrectly.
-
-## Project Structure
-
-```
-Module4/
-  mnist_models.ipynb   Main notebook (training, tuning, evaluation, visualizations)
-  requirements.txt     Python dependencies
-  README.md            This file
-  logs/                Per-epoch training metrics (CSV per experiment)
-  checkpoints/         Saved model weights (.pt per experiment)
-  data/                MNIST dataset (auto-downloaded)
-```
-
-## How to Run
-
-```bash
-pip install -r requirements.txt
-jupyter notebook mnist_models.ipynb
-```
-
-Run all cells sequentially. The hyperparameter tuning section takes approximately 15-20 minutes on Apple Silicon (MPS).
-
-## Requirements
-
-- Python 3.10+
-- PyTorch
-- torchvision
-- matplotlib
-- jupyter
