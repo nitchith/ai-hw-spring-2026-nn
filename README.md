@@ -131,6 +131,12 @@ The confusion matrices below show only misclassifications (diagonal removed) for
 
 ![Confusion Matrices](confusion_matrices.png)
 
+### Misclassified Test Examples
+
+Sample misclassifications from each model's best configuration, showing predicted vs. true labels:
+
+![Misclassified Test Examples](examples.png)
+
 ## Key Observations
 
 1. **CNN achieves the best individual accuracy (99.08%)**, which is expected. Convolutional architectures have strong inductive biases (local connectivity, translation invariance) that are well-suited for image data.
